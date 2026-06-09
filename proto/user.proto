@@ -1,0 +1,24 @@
+
+#이런 API를 만들 거야라는 설계도 작성 부분ㄴ
+
+syntax = "proto3";
+
+service UserService {
+  rpc GetUser(UserRequest) returns (UserResponse);
+}
+
+
+# 타입 정의 부분
+# pydantic 모델 역할
+
+message UserRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  int32 id = 1;
+  string name = 2;
+}
+
+#필드 1번 = id
+# 필드 2번 = name
